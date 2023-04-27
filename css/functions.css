@@ -1,0 +1,34 @@
+.functions {
+    grid-column: 3/6;
+    position: relative;
+}
+
+
+.functions-grid {
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 60px;
+    background-color: #ccc9c9;
+}
+
+
+.functions-click {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 3px;
+    gap: 3px;
+}
+
+
+.functions-grid-items {
+    height: 40px;
+    width: 55px;
+    background-color: white;
+    border: none;
+}
+
+.functions-grid-items:hover {
+    background-color: rgb(245, 243, 243);
+}

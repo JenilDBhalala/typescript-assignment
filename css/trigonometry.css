@@ -1,0 +1,51 @@
+.trigonometry {
+    grid-column: 1/3;
+    position: relative;
+}
+
+.trigonometry-grid{
+    display: none;
+    position: absolute;
+    top: 48px;
+    left: 20px;
+    background-color: #ccc9c9;
+}
+
+.trigonometry-click{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 3px;
+    gap: 3px;
+}
+
+.trigonometry-grid-items {
+    height: 40px;
+    width: 55px;
+    background-color: white;
+    border: none;
+}
+
+.trigonometry-grid-items:hover {
+    background-color: rgb(245, 243, 243);
+}
+
+.inverse, .hyp, .hyp-inverse{
+    display: none;
+}
+
+.second-active{
+    background-color: #91c1e7;
+}
+
+.second-active:hover{
+    background-color: #82b8e4;
+}
+
+.hyp-active{
+    background-color: #91c1e7;
+}
+
+.hyp-active:hover{
+    background-color: #82b8e4;
+}

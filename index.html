@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- linked external css files -->
+  <link rel="stylesheet" href="./css/calc.css" />
+  <link rel="stylesheet" href="./css/trigonometry.css" />
+  <link rel="stylesheet" href="./css/functions.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <title>Scientific Calculator</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- top part grid -->
+    <div class="top-grid">
+      <div class="top-grid-items screen">
+        <div class="op-screen"></div>
+        <div class="ip-screen"></div>
+      </div>
+
+      <button class="top-grid-items degree">DEG</button>
+
+      <button class="top-grid-items fminuse" title="Exponential">F-E</button>
+      <button class="top-grid-items memory memory-clear" title="Memory Clear" disabled>MC</button>
+      <button class="top-grid-items memory memory-restore" title="Memory Recall" disabled>MR</button>
+      <button class="top-grid-items memory memory-plus" title="Memory Add">M+</button>
+      <button class="top-grid-items memory memory-minus" title="Memory Subtract">M-</button>
+      <button class="top-grid-items memory memory-store" title="Memory Store">MS</button>
+
+      <div class="top-grid-items dropdown trigonometry">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="15" viewBox="0 0 50 50">
+          <path
+            d="M 48 0 C 46.894531 0 46 0.894531 46 2 C 46 2.171875 46.019531 2.339844 46.0625 2.5 L 2.5 46.0625 C 2.339844 46.019531 2.171875 46 2 46 C 0.894531 46 0 46.894531 0 48 C 0 49.105469 0.894531 50 2 50 C 2.738281 50 3.371094 49.597656 3.71875 49 L 46.28125 49 C 46.628906 49.597656 47.261719 50 48 50 C 49.105469 50 50 49.105469 50 48 C 50 47.261719 49.597656 46.628906 49 46.28125 L 49 3.71875 C 49.597656 3.371094 50 2.738281 50 2 C 50 0.894531 49.105469 0 48 0 Z M 47 4.4375 L 47 37 L 37 37 L 37 47 L 15.9375 47 C 15.695313 43.90625 14.472656 41.101563 12.53125 38.90625 Z M 39 39 L 47 39 L 47 46.28125 C 46.699219 46.457031 46.457031 46.699219 46.28125 47 L 39 47 Z M 11.09375 40.34375 C 12.675781 42.164063 13.699219 44.460938 13.9375 47 L 4.4375 47 Z">
+          </path>
+        </svg>
+        <span> &nbsp;Trigonometry </span> &nbsp;
+        <img src="./assets/dropdown.png" alt="dropdown image" style="height: 20px;">
+
+        <!-- will apper when clicked on trigonometry button -->
+        <div class="trigonometry-grid">
+          <button class="trigonometry-grid-items secondbtn">2nd</button>
+
+          <button class="trigonometry-grid-items sin normal">sin</button>
+          <button class="trigonometry-grid-items sin inverse">sin-1</button>
+          <button class="trigonometry-grid-items sin hyp">sinh</button>
+          <button class="trigonometry-grid-items sin hyp-inverse">sinh-1</button>
+
+          <button class="trigonometry-grid-items cos normal">cos</button>
+          <button class="trigonometry-grid-items cos inverse">cos-1</button>
+          <button class="trigonometry-grid-items cos hyp">cosh</button>
+          <button class="trigonometry-grid-items cos hyp-inverse">cosh-1</button>
+
+          <button class="trigonometry-grid-items tan normal">tan</button>
+          <button class="trigonometry-grid-items tan inverse">tan-1</button>
+          <button class="trigonometry-grid-items tan hyp">tanh</button>
+          <button class="trigonometry-grid-items tan hyp-inverse">tan-1</button>
+
+          <button class="trigonometry-grid-items hypbtn">hyp</button>
+
+          <button class="trigonometry-grid-items csc normal">csc</button>
+          <button class="trigonometry-grid-items csc inverse">csc-1</button>
+          <button class="trigonometry-grid-items csc hyp">csch</button>
+          <button class="trigonometry-grid-items csc hyp-inverse">csch-1</button>
+
+          <button class="trigonometry-grid-items sec normal">sec</button>
+          <button class="trigonometry-grid-items sec inverse">sec-1</button>
+          <button class="trigonometry-grid-items sec hyp">sech</button>
+          <button class="trigonometry-grid-items sec hyp-inverse">sech-1</button>
+
+          <button class="trigonometry-grid-items cot normal">cot</button>
+          <button class="trigonometry-grid-items cot inverse">cot-1</button>
+          <button class="trigonometry-grid-items cot hyp">coth</button>
+          <button class="trigonometry-grid-items cot hyp-inverse">coth-1</button>
+        </div>
+      </div>
+
+      <div class="top-grid-items dropdown functions">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" height="20" viewBox="0 0 30 30">
+          <path
+            d="M22.047,3c-6.277,0-6.98,7.011-7.347,9h-3.268l-0.417,2h3.339c-1.855,11.024-2.65,11.781-3.565,11.781 c-0.83-2.323-1.434-3.066-2.692-3.066c-1.764,0-2.122,1.454-2.122,2.005C5.975,25.958,7,27,9,27c7.403,0,7.993-6.073,9.153-13h3.416 l0.417-2h-3.528c0.371-2.876,0.769-7.035,1.862-7.781c0.181,0.48,0.848,3.066,2.696,3.066c1.986,0,2.152-1.852,2.152-2.07 C25.166,4.551,24.792,3,22.047,3z">
+          </path>
+        </svg>
+        <span> &nbsp;Function</span> &nbsp;
+        <img src="./assets/dropdown.png" alt="dropdown image" style="height: 20px;">
+
+        <!-- will apper when clicked on functions button -->
+        <div class="functions-grid">
+          <button class="functions-grid-items floor">⌊ x ⌋</button>
+          <button class="functions-grid-items abs">| x |</button>
+          <button class="functions-grid-items ceil">⌈ x ⌉</button>
+          <button class="functions-grid-items random">rand</button>
+          <button class="functions-grid-items dms">->dms</button>
+          <button class="functions-grid-items deg">->deg</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- bottom part grid -->
+    <div class="bottom-grid">
+      <button class="bottom-grid-items func second-version"> 2nd </button>
+      <button class="bottom-grid-items const pi">&pi;</button>
+      <button class="bottom-grid-items const euler">e</button>
+      <button class="bottom-grid-items func delall">CE</button>
+      <button class="bottom-grid-items func del">
+        <svg fill="#000000" height="18px" width="18px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 489.425 489.425" xml:space="preserve">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <g>
+              <g>
+                <path
+                  d="M122.825,394.663c17.8,19.4,43.2,30.6,69.5,30.6h216.9c44.2,0,80.2-36,80.2-80.2v-200.7c0-44.2-36-80.2-80.2-80.2h-216.9 c-26.4,0-51.7,11.1-69.5,30.6l-111.8,121.7c-14.7,16.1-14.7,40.3,0,56.4L122.825,394.663z M29.125,233.063l111.8-121.8 c13.2-14.4,32-22.6,51.5-22.6h216.9c30.7,0,55.7,25,55.7,55.7v200.6c0,30.7-25,55.7-55.7,55.7h-217c-19.5,0-38.3-8.2-51.5-22.6 l-111.7-121.8C23.025,249.663,23.025,239.663,29.125,233.063z">
+                </path>
+                <path
+                  d="M225.425,309.763c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6l47.8-47.8l47.8,47.8c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6 c4.8-4.8,4.8-12.5,0-17.3l-47.9-47.8l47.8-47.8c4.8-4.8,4.8-12.5,0-17.3s-12.5-4.8-17.3,0l-47.8,47.8l-47.8-47.8 c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l47.8,47.8l-47.8,47.8C220.725,297.263,220.725,304.962,225.425,309.763z">
+                </path>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </button>
+
+      <!-- 2nd -->
+      <button class="bottom-grid-items func square first">
+        <div>x<sup>2</sup></div>
+      </button>
+      <button class="bottom-grid-items func cube another">
+        <div>x<sup>3</sup></div>
+      </button>
+
+      <button class="bottom-grid-items func one-by-x">1/x</button>
+      <button class="bottom-grid-items func abs">| x |</button>
+      <button class="bottom-grid-items func exp">exp</button>
+      <button class="bottom-grid-items op modulo">mod</button>
+
+      <!-- 2nd -->
+      <button class="bottom-grid-items func sqrt first">√x</button>
+      <button class="bottom-grid-items func cbrt another">3√x</button>
+
+      <button class="bottom-grid-items op open">(</button>
+      <button class="bottom-grid-items op close">)</button>
+      <button class="bottom-grid-items func fact">n!</button>
+      <button class="bottom-grid-items op division">&divide;</button>
+
+      <!-- 2nd -->
+      <button class="bottom-grid-items op xpowy first">
+        <div>x<sup>y</sup></div>
+      </button>
+      <button class="bottom-grid-items op ythroot another">
+        <div>y√x</div>
+      </button>
+
+      <button class="bottom-grid-items nums seven">7</button>
+      <button class="bottom-grid-items nums eight">8</button>
+      <button class="bottom-grid-items nums nine">9</button>
+      <button class="bottom-grid-items op multiply">&times;</button>
+
+      <!-- 2nd -->
+      <button class="bottom-grid-items func tenpowx first">
+        <div>10<sup>x</sup></div>
+      </button>
+      <button class="bottom-grid-items func twopowx another">
+        <div>2<sup>x</sup></div>
+      </button>
+
+      <button class="bottom-grid-items nums four">4</button>
+      <button class="bottom-grid-items nums five">5</button>
+      <button class="bottom-grid-items nums six">6</button>
+      <button class="bottom-grid-items op minus">-</button>
+
+      <!-- 2nd -->
+      <button class="bottom-grid-items func log first">log</button>
+      <button class="bottom-grid-items op logxbasey another">
+        <div>log<sub>y</sub>x</div>
+      </button>
+
+      <button class="bottom-grid-items nums one">1</button>
+      <button class="bottom-grid-items nums two">2</button>
+      <button class="bottom-grid-items nums three">3</button>
+      <button class="bottom-grid-items op plus">+</button>
+
+      <!-- 2nd -->
+      <button class="bottom-grid-items func ln first">ln</button>
+      <button class="bottom-grid-items func epowx another">
+        <div>e<sup>x</sup></div>
+      </button>
+
+      <button class="bottom-grid-items negate">+/-</button>
+      <button class="bottom-grid-items nums zero">0</button>
+      <button class="bottom-grid-items point">.</button>
+      <button class="bottom-grid-items equal">&equals;</button>
+    </div>
+  </div>
+
+  <script type="module" src="./js/calc.js"></script>
+</body>
+
+</html>
