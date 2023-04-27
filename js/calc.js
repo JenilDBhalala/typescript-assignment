@@ -377,7 +377,7 @@ trigonometryGrid.addEventListener('click', (e) => {
     }
     let trigonometryGridChildrens = document.querySelector('.trigonometry-grid').children;
     Array.from(trigonometryGridChildrens).forEach((child) => {
-        if (secondActiveFlag == false && hyperActiveFlag == false) {
+        if (secondActiveFlag === false && hyperActiveFlag === false) {
             if (child.classList.contains('normal')) {
                 child.style.display = 'block';
             }
@@ -395,7 +395,7 @@ trigonometryGrid.addEventListener('click', (e) => {
             hyperbolicFunctionalityFlag = false;
             inverseHyperbolicFunctionalityFlag = false;
         }
-        else if (secondActiveFlag == true && hyperActiveFlag == false) {
+        else if (secondActiveFlag === true && hyperActiveFlag === false) {
             if (child.classList.contains('normal')) {
                 child.style.display = 'none';
             }
@@ -413,7 +413,7 @@ trigonometryGrid.addEventListener('click', (e) => {
             hyperbolicFunctionalityFlag = false;
             inverseHyperbolicFunctionalityFlag = false;
         }
-        else if (secondActiveFlag == false && hyperActiveFlag == true) {
+        else if (secondActiveFlag === false && hyperActiveFlag === true) {
             if (child.classList.contains('normal')) {
                 child.style.display = 'none';
             }
@@ -431,7 +431,7 @@ trigonometryGrid.addEventListener('click', (e) => {
             hyperbolicFunctionalityFlag = true;
             inverseHyperbolicFunctionalityFlag = false;
         }
-        else if (secondActiveFlag == true && hyperActiveFlag == true) {
+        else if (secondActiveFlag === true && hyperActiveFlag === true) {
             if (child.classList.contains('normal')) {
                 child.style.display = 'none';
             }
@@ -451,7 +451,7 @@ trigonometryGrid.addEventListener('click', (e) => {
         }
     });
     //checking if degree is enabled or radian is enabled
-    if (degreeFlag == true) {
+    if (degreeFlag === true) {
         degreeOrRadian = (Number(inputScreen.innerText) * (Math.PI / 180)).toString();
     }
     else {
